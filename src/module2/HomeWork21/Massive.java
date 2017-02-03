@@ -1,4 +1,4 @@
-package module2;
+package module2.HomeWork21;
 
 /**
  * Created by Natus Vincere on 03.02.2017.
