@@ -55,16 +55,12 @@ public class CalculateOfArrays { public static void main(String[] args) {
             a += i;
         System.out.println("Сумма всех целых чисел: " + a);
     }
-
     public void sum(double Array1[]) {
         double b = 0;
         for (double ball : Array1)
             b += ball;
         System.out.println("Сумма всех дробных чисел: " + b);
-
-
     }
-
     public void min(int Array[]) {
         int c = Array[0];
         for (int i = 0; i < Array.length; i++) {
@@ -72,10 +68,7 @@ public class CalculateOfArrays { public static void main(String[] args) {
                 c = Array[i];
         }
         System.out.println("Минимальное целое число: " + c);
-
-
     }
-
     public void min(double Array1[]) {
         double a = Array1[0];
         for (int i = 0; i < Array1.length; i++) {
@@ -83,10 +76,7 @@ public class CalculateOfArrays { public static void main(String[] args) {
                 a = Array1[i];
         }
         System.out.println("Минимальное дробное число: " + a);
-
-
     }
-
     public void max(int Array[]) {
         int a = Array[0];
         for (int i = 0; i < Array.length; i++) {
@@ -94,9 +84,7 @@ public class CalculateOfArrays { public static void main(String[] args) {
                 a = Array[i];
         }
         System.out.println("Максимальное число: " + a);
-
     }
-
     public void max(double Array1[]) {
         double a = Array1[0];
         for (int i = 0; i < Array1.length; i++) {
@@ -104,9 +92,7 @@ public class CalculateOfArrays { public static void main(String[] args) {
                 a = Array1[i];
         }
         System.out.println("Максимальное дробное число: " + a);
-
     }
-
     public void maxPositive(int Array2[]) {
         int a = 0;
         for (int number : Array2) {
@@ -115,7 +101,6 @@ public class CalculateOfArrays { public static void main(String[] args) {
         }
         System.out.println("Положительных значений нет :( " + a);
     }
-
     public void maxPositive(double Array1[]) {
         double a = 0;
         for (double number : Array1) {
@@ -123,9 +108,7 @@ public class CalculateOfArrays { public static void main(String[] args) {
                 a = number;
         }
         System.out.println("Максимальное дробное позитивное число: " + a);
-
     }
-
     public void multiplication(int Array[]) {
         int mult = 1;
         for (int number : Array) {
@@ -133,34 +116,25 @@ public class CalculateOfArrays { public static void main(String[] args) {
         }
         System.out.println("Multiplication for int: " + mult);
     }
-
     public void multiplication(double Array1[]) {
         double mult = 1;
         for (double number : Array1) {
             mult *= number;
         }
         System.out.println("Multiplication for double: " + mult);
-
     }
-
     public void modulus(int Array[]) {
         int first = Array[0];
         int last = Array[Array.length - 1];
         System.out.println("Модуль первого числа: " + Math.abs(first));
         System.out.println("Модуль ппоследнего числа: " + Math.abs(last));
-
-
     }
-
     public void modulus(double Array[]) {
         double first = Array[0];
         double last = Array[Array.length - 1];
         System.out.println("Модуль первого дробного числа: " + Math.abs(first));
         System.out.println("Модуль последнего дробного числа: " + Math.abs(first));
-
     }
-
-
     public void secondLargest(int Array[]) {
         int Largest = Array[0];
         int SecondLargest = Array[0];
@@ -172,7 +146,6 @@ public class CalculateOfArrays { public static void main(String[] args) {
                 SecondLargest = number;
         System.out.println("Второе целое число: " + SecondLargest);
     }
-
     public void secondLargest(double Array1[]) {
         double Largest = Array1[0];
         double SecondLargest = Array1[0];
@@ -183,6 +156,5 @@ public class CalculateOfArrays { public static void main(String[] args) {
             } else if (number > SecondLargest)
                 SecondLargest = number;
         System.out.println("Второе дробное число: " + SecondLargest);
-
     }
 }
