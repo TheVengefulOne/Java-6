@@ -98,6 +98,7 @@ public class CalculateOfArrays { public static void main(String[] args) {
         for (int number : Array2) {
             if (number > 0 && a < number)
                 a = number;
+
         }
         System.out.println("Положительных значений нет :( " + a);
     }
