@@ -9,7 +9,7 @@ import main.java.com.Alexandr.practice.modul04.task01.User;
  */
 public class BankSystemImp implements BankSystem {
 
-    @Override
+
     public void withdrawOfUser(User user, int amount) {
         double commision = user.getBank().getCommission(amount)*0.01;
         double limit = user.getBank().getLimitOfWithdrawal();
@@ -22,7 +22,7 @@ public class BankSystemImp implements BankSystem {
         }
     }
 
-    @Override
+
     public void fundUser(User user, int amount) {
         double balance = user.getBalance();
         double limit = user.getBank().getLimitOfFunding();
@@ -30,7 +30,7 @@ public class BankSystemImp implements BankSystem {
         else user.setBalance(balance + amount);
     }
 
-    @Override
+
     public void transferMoney(User fromUser, User toUser, int amount) {
         double balance1 = fromUser.getBalance();
         double balance2 = toUser.getBalance();
@@ -41,7 +41,7 @@ public class BankSystemImp implements BankSystem {
         }
     }
 
-    @Override
+
     public void paySalary(User user) {
         double balance = user.getBalance();
         double salary = user.getSalary();
