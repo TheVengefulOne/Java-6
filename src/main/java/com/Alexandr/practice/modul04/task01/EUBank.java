@@ -9,36 +9,46 @@ public class EUBank extends Bank {
     public EUBank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
         super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
     }
+    int limitOfWithdrawalUSD = 2000;
+    int limitOfWithdrawalEUR = 2200;
+    int limitOfRefillEUR = 20000;
+    int limitOfRefillUSD = 10000;
+    int monthlyRateUSD = 0;
+    int monthlyRateEUR = 1;
+    int commissionUSD1 = 5;
+    int commissionUSD2 = 7;
+    int commissionEUR1 = 2;
+    int commissionEUR2 = 4;
 
 
 
 
-    @Override
-    int getLimitOfWithdrawal() {
-        if(this.getCurrency() == Currency.USD) return 2000;
-        else return 2200;
+
+   public int getLimitOfWithdrawal() {
+        if(this.getCurrency() == Currency.USD) return limitOfWithdrawalUSD;
+        else return limitOfWithdrawalEUR;
     }
 
-    @Override
-    int getLimitOfFunding() {
-        if (this.getCurrency() == Currency.EUR) return 20000;
-        else return 10000;
+
+    public int getLimitOfFunding() {
+        if (this.getCurrency() == Currency.EUR) return limitOfRefillEUR;
+        else return limitOfRefillUSD;
     }
 
-    @Override
-    int getMonthlyRate() {
-        if (this.getCurrency() == Currency.USD) return 0;
-        else return 1;
+
+    public int getMonthlyRate() {
+        if (this.getCurrency() == Currency.USD) return monthlyRateUSD;
+        else return monthlyRateEUR;
     }
 
-    @Override
-    int getCommission(int amount) {
+
+    public int getCommission(int amount) {
         if (this.getCurrency() == Currency.USD) {
-            if (amount < 1000) return 5;
-            else return 7;
+            if (amount < 1000) return commissionUSD1;
+            else return commissionUSD2;
         } else {
-            if (amount < 1000) return 2;
-            else return 4;
+            if (amount < 1000) return commissionEUR1;
+            else return commissionEUR2;
         }
     }
 }

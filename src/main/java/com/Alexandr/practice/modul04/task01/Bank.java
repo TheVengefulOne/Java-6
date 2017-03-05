@@ -15,14 +15,14 @@ public abstract class Bank {
 
 
 
-    abstract int getLimitOfWithdrawal();
-   abstract int getLimitOfFunding();
-  abstract int getMonthlyRate();
-    abstract int getCommission(int summ);
+    public abstract int getLimitOfWithdrawal();
+    public abstract int getLimitOfFunding();
+    public abstract int getMonthlyRate();
+    public abstract int getCommission(int summ);
 
 
     double moneyPaidMonthlyForSalary(){
-        return 0;
+        return numberOfEmployees * avrSalaryOfEmployee;
     }
 
     public Bank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {

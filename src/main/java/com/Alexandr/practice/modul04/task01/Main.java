@@ -25,7 +25,7 @@ public class Main {
         User userEUBank2 = new User(1,"name2",200,3,"CN_N4",100,euBank1);
         User userChinaBank1 = new User(1,"name1",200,3,"CN_N5",100,chinaBank1);
         User userChinaBank2 = new User(1,"name2",200,3,"CN_N6",100,chinaBank1);
-        System.out.println("User1 name is "+ userUSBank1.getName());
+        System.out.println("User name is "+ userUSBank1.getName());
         System.out.println("John`s bank is in the "+userUSBank2.getBank().getBankCountry());
         System.out.println("Bob`s company is "+userEUBank1.getCompanyName());
 

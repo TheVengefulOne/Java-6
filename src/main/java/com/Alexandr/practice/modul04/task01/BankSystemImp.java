@@ -15,10 +15,10 @@ public class BankSystemImp implements BankSystem {
         double limit = user.getBank().getLimitOfWithdrawal();
         double total = commision*amount;
         double balance = user.getBalance();
-        if(balance<total) System.err.println("NOT ENOUGH MONEY");
+        if(balance < total) System.err.println("NOT ENOUGH MONEY");
         else {
             if (limit < amount && limit != 0) System.err.println("THE LIMIT OF WITHDRAW "+limit);
-            else user.setBalance(balance-total);
+            else user.setBalance(balance - total);
         }
     }
 
