@@ -15,10 +15,10 @@ public  class ChinaBank extends Bank {
     public static final int LIMIT_OF_REFILL_USD = 5000;
     public static final int MONTHLY_RATE_USD = 1;
     public static final int MONTHLY_RATE_EUR = 0;
-    public static final int COMMISSION_USD_1 = 3;
-    public static final int COMMISSION_USD_2 = 5;
-    public static final int COMMISSION_EUR_1 = 10;
-    public static final int COMMISSION_EUR_2 = 11;
+    public static final int COMMISSION_USD_THREE_PERCENT = 3;
+    public static final int COMMISSION_USD_FIVE_PERCENT = 5;
+    public static final int COMMISSION_EUR_TEN_PERCENT = 10;
+    public static final int COMMISSION_EUR_ELEVEN_PERCENT = 11;
     public static final int MONEY_LIMIT = 1000;
 
 
@@ -45,11 +45,11 @@ public  class ChinaBank extends Bank {
 
     public int getCommission(int amount) {
         if (this.getCurrency() == Currency.USD) {
-            if (amount < MONEY_LIMIT) return COMMISSION_USD_1;
-            else return COMMISSION_USD_2;
+            if (amount < MONEY_LIMIT) return COMMISSION_USD_THREE_PERCENT;
+            else return COMMISSION_USD_FIVE_PERCENT;
         } else {
-            if (amount < MONEY_LIMIT) return COMMISSION_EUR_1;
-            else return COMMISSION_EUR_2;
+            if (amount < MONEY_LIMIT) return COMMISSION_EUR_TEN_PERCENT;
+            else return COMMISSION_EUR_ELEVEN_PERCENT;
         }
     }
 }

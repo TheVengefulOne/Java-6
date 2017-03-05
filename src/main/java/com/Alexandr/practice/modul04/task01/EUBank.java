@@ -15,10 +15,10 @@ public class EUBank extends Bank {
     public static final int LIMIT_OF_REFILL_USD = 10000;
     public static final int MONTHLY_RATE_USD = 0;
     public static final int MONTHLY_RATE_EUR = 1;
-    public static final int COMMISSION_USD_1 = 5;
-    public static final int COMMISSION_USD_2 = 7;
-    public static final int COMMISSION_EUR_1 = 2;
-    public static final int COMMISSION_EUR_2 = 4;
+    public static final int COMMISSION_USD_FIVE_PERCENT = 5;
+    public static final int COMMISSION_USD_SEVEN_PERCENT = 7;
+    public static final int COMMISSION_EUR_TWO_PERCENT = 2;
+    public static final int COMMISSION_EUR_FOURTH_PERCENT = 4;
     public static final int MONEY_LIMIT = 1000;
 
 
@@ -45,11 +45,11 @@ public class EUBank extends Bank {
 
     public int getCommission(int amount) {
         if (this.getCurrency() == Currency.USD) {
-            if (amount < MONEY_LIMIT) return COMMISSION_USD_1;
-            else return COMMISSION_USD_2;
+            if (amount < MONEY_LIMIT) return COMMISSION_USD_FIVE_PERCENT;
+            else return COMMISSION_USD_SEVEN_PERCENT;
         } else {
-            if (amount < MONEY_LIMIT) return COMMISSION_EUR_1;
-            else return COMMISSION_EUR_2;
+            if (amount < MONEY_LIMIT) return COMMISSION_EUR_TWO_PERCENT;
+            else return COMMISSION_EUR_FOURTH_PERCENT;
         }
     }
 }

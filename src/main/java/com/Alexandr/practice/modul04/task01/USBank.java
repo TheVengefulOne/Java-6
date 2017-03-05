@@ -15,10 +15,10 @@ public class USBank extends Bank {
     public static final int LIMIT_OF_REFILL_USD = 0;
     public static final int MONTHLY_RATE_USD = 2;
     public static final int MONTHLY_RATE_EUR = 1;
-    public static final int COMMISSION_USD_1 = 5;
-    public static final int COMMISSION_USD_2 = 7;
-    public static final int COMMISSION_EUR_1 = 6;
-    public static final int COMMISSION_EUR_2 = 8;
+    public static final int COMMISSION_USD_FIVE_PERCENT = 5;
+    public static final int COMMISSION_USD_SEVEN_PERCENT = 7;
+    public static final int COMMISSION_EUR_SIX_PERCENT = 6;
+    public static final int COMMISSION_EUR_EIGHT_PERCENT = 8;
     public static final int MONEY_LIMIT = 1000;
 
 
@@ -46,12 +46,12 @@ public class USBank extends Bank {
 
     public int getCommission(int summ) {
         if (this.getCurrency() == Currency.USD){
-            if (summ < MONEY_LIMIT) return COMMISSION_USD_1;
-            else return COMMISSION_USD_2;
+            if (summ < MONEY_LIMIT) return COMMISSION_USD_FIVE_PERCENT;
+            else return COMMISSION_USD_SEVEN_PERCENT;
         }
         else {
-            if (summ < MONEY_LIMIT) return COMMISSION_EUR_1;
-            else return COMMISSION_EUR_2;
+            if (summ < MONEY_LIMIT) return COMMISSION_EUR_SIX_PERCENT;
+            else return COMMISSION_EUR_EIGHT_PERCENT;
         }
     }
 }
