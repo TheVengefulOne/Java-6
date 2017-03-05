@@ -32,6 +32,11 @@ public class BankSystemImp implements BankSystem {
 
 
     public void transferMoney(User fromUser, User toUser, int amount) {
+        if(fromUser.getBank().getCurrency() != toUser.getBank().getCurrency()){
+            System.out.println("\n" +
+                    "Currencies are not the same");
+            return;
+        }
         double commision = fromUser.getBank().getCommission(amount)*0.01;
         double limit = toUser.getBank().getLimitOfWithdrawal();
         double balance1 = fromUser.getBalance();
@@ -41,11 +46,7 @@ public class BankSystemImp implements BankSystem {
             fromUser.setBalance(balance1 - amount);
             toUser.setBalance(balance2 + amount);
         }
-        if(fromUser.getBank().getCurrency() != toUser.getBank().getCurrency()){
-            System.out.println("\n" +
-                    "Currencies are not the same");
-            return;
-        }
+
     }
 
 
