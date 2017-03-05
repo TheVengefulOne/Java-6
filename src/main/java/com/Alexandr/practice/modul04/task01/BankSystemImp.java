@@ -41,6 +41,11 @@ public class BankSystemImp implements BankSystem {
             fromUser.setBalance(balance1 - amount);
             toUser.setBalance(balance2 + amount);
         }
+        if(fromUser.getBank().getCurrency() != toUser.getBank().getCurrency()){
+            System.out.println("\n" +
+                    "Currencies are not the same");
+            return;
+        }
     }
 
 
