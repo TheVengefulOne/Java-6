@@ -32,6 +32,8 @@ public class BankSystemImp implements BankSystem {
 
 
     public void transferMoney(User fromUser, User toUser, int amount) {
+        double commision = fromUser.getBank().getCommission(amount)*0.01;
+        double limit = toUser.getBank().getLimitOfWithdrawal();
         double balance1 = fromUser.getBalance();
         double balance2 = toUser.getBalance();
         if (amount > balance1) System.err.println("NOT ENOUGH MONEY");
