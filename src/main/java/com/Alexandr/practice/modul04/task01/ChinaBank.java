@@ -19,6 +19,7 @@ public  class ChinaBank extends Bank {
     public static final int COMMISSION_USD_2 = 5;
     public static final int COMMISSION_EUR_1 = 10;
     public static final int COMMISSION_EUR_2 = 11;
+    public static final int MONEY_LIMIT = 1000;
 
 
 
@@ -44,10 +45,10 @@ public  class ChinaBank extends Bank {
 
     public int getCommission(int amount) {
         if (this.getCurrency() == Currency.USD) {
-            if (amount < 1000) return COMMISSION_USD_1;
+            if (amount < MONEY_LIMIT) return COMMISSION_USD_1;
             else return COMMISSION_USD_2;
         } else {
-            if (amount < 1000) return COMMISSION_EUR_1;
+            if (amount < MONEY_LIMIT) return COMMISSION_EUR_1;
             else return COMMISSION_EUR_2;
         }
     }
