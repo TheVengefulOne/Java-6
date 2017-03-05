@@ -9,48 +9,49 @@ public class USBank extends Bank {
     public USBank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
         super(id, bankCountry, currency , numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
     }
-    int limitOfWithdrawalUSD = 1000;
-    int limitOfWithdrawalEUR = 1200;
-    int limitOfRefillEUR = 10000;
-    int limitOfRefillUSD = 0;
-    int monthlyRateUSD = 2;
-    int monthlyRateEUR = 1;
-    int commissionUSD1 = 5;
-    int commissionUSD2 = 7;
-    int commissionEUR1 = 6;
-    int commissionEUR2 = 8;
+    public static final int LIMIT_OF_WITHDRAWAL_USD = 1000;
+    public static final int LIMIT_OF_WITHDRAWAL_EUR = 1200;
+    public static final int LIMIT_OF_REFILL_EUR = 10000;
+    public static final int LIMIT_OF_REFILL_USD = 0;
+    public static final int MONTHLY_RATE_USD = 2;
+    public static final int MONTHLY_RATE_EUR = 1;
+    public static final int COMMISSION_USD_1 = 5;
+    public static final int COMMISSION_USD_2 = 7;
+    public static final int COMMISSION_EUR_1 = 6;
+    public static final int COMMISSION_EUR_2 = 8;
+    public static final int MONEY_LIMIT = 1000;
 
 
 
 
 
     public int getLimitOfWithdrawal() {
-        if(this.getCurrency() == Currency.USD) return limitOfWithdrawalUSD;
-       else return limitOfWithdrawalEUR;
+        if(this.getCurrency() == Currency.USD) return LIMIT_OF_WITHDRAWAL_USD;
+       else return LIMIT_OF_WITHDRAWAL_EUR;
 
     }
 
 
     public int getLimitOfFunding() {
-        if(this.getCurrency() == Currency.EUR) return limitOfRefillEUR;
-        else return limitOfRefillUSD;
+        if(this.getCurrency() == Currency.EUR) return LIMIT_OF_REFILL_EUR;
+        else return LIMIT_OF_REFILL_USD;
     }
 
 
     public int getMonthlyRate() {
-        if(this.getCurrency() == Currency.EUR) return monthlyRateEUR;
-        else return monthlyRateUSD;
+        if(this.getCurrency() == Currency.EUR) return MONTHLY_RATE_EUR;
+        else return MONTHLY_RATE_USD;
     }
 
 
     public int getCommission(int summ) {
         if (this.getCurrency() == Currency.USD){
-            if (summ < 1000) return commissionUSD1;
-            else return commissionUSD2;
+            if (summ < MONEY_LIMIT) return COMMISSION_USD_1;
+            else return COMMISSION_USD_2;
         }
         else {
-            if (summ < 1000) return commissionEUR1;
-            else return commissionEUR2;
+            if (summ < MONEY_LIMIT) return COMMISSION_EUR_1;
+            else return COMMISSION_EUR_2;
         }
     }
 }
