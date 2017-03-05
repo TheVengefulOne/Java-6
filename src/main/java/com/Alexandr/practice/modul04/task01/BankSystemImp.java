@@ -26,18 +26,18 @@ public class BankSystemImp implements BankSystem {
     public void fundUser(User user, int amount) {
         double balance = user.getBalance();
         double limit = user.getBank().getLimitOfFunding();
-        if(amount>limit) System.err.println("THE LIMIT OF FOUNDING "+limit);
-        else user.setBalance(balance+amount);
+        if(amount > limit) System.err.println("THE LIMIT OF FOUNDING "+limit);
+        else user.setBalance(balance + amount);
     }
 
     @Override
     public void transferMoney(User fromUser, User toUser, int amount) {
         double balance1 = fromUser.getBalance();
         double balance2 = toUser.getBalance();
-        if (amount>balance1) System.err.println("NOT ENOUGH MONEY");
+        if (amount > balance1) System.err.println("NOT ENOUGH MONEY");
         else {
-            fromUser.setBalance(balance1-amount);
-            toUser.setBalance(balance2+amount);
+            fromUser.setBalance(balance1 - amount);
+            toUser.setBalance(balance2 + amount);
         }
     }
 
@@ -45,7 +45,7 @@ public class BankSystemImp implements BankSystem {
     public void paySalary(User user) {
         double balance = user.getBalance();
         double salary = user.getSalary();
-        double commision = salary*user.getBank().getMonthlyRate()*0.01;
-        user.setBalance(balance+salary-commision);
+        double commision = salary * user.getBank().getMonthlyRate()*0.01;
+        user.setBalance(balance + salary - commision);
     }
 }
