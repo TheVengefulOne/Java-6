@@ -37,10 +37,6 @@ public class Main {
         list.sort(new PriceAndCity());
         list.sort(new ItemIndificatorCity());
 
-
-
-
-
         delDuplicates(list);
         delLessPrices(list);
         splitByCurrency(list);
@@ -86,7 +82,6 @@ public class Main {
             list.remove(lessPrice);
         }
     }
-
 
     private static void delDuplicates(List<Order> list){
         Set<Order> newList = new HashSet<>(list);
